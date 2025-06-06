@@ -1,0 +1,6 @@
+@GL_Casestudy_HostAddress = http://localhost:5225
+
+GET {{GL_Casestudy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

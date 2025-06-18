@@ -172,3 +172,5 @@ C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Case
 C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Casestudy\obj\Debug\net8.0\GL_Casestudy.pdb
 C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Casestudy\obj\Debug\net8.0\GL_Casestudy.genruntimeconfig.cache
 C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Casestudy\obj\Debug\net8.0\ref\GL_Casestudy.dll
+C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Casestudy\obj\Debug\net8.0\GL_Casestudy.sourcelink.json
+C:\Users\gabri\OneDrive\Documents\Fanshawe Sem 4\Full Stack\GL_Casestudy\GL_Casestudy\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

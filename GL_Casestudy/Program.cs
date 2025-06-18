@@ -1,6 +1,9 @@
 using GL_Casestudy.DAL;
 using GL_Casestudy.DAL.DomainClasses;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +23,31 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyAllowSpecificOrigins,
-        policy => policy.WithOrigins("http://localhost:9004").AllowAnyMethod().AllowAnyHeader());
+        policy => policy.WithOrigins("http://localhost:9000", "http://localhost:9001", "http://localhost:9002", "http://localhost:9003").AllowAnyMethod().AllowAnyHeader());
 });
 
+// jwt addition
+// get key from settings
+var appSettings = builder.Configuration.GetSection("AppSettings").GetValue<string>("Secret");
+var key = Encoding.ASCII.GetBytes(appSettings);
+// add scheme and options
+builder.Services.AddAuthentication(scheme =>
+{
+    scheme.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    scheme.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(option =>
+{
+    option.RequireHttpsMetadata = false;
+    option.SaveToken = true;
+    option.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
 
 var app = builder.Build();
 
@@ -37,6 +62,8 @@ app.UseHttpsRedirection();
 
 app.UseCors(MyAllowSpecificOrigins);
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
@@ -47,18 +74,18 @@ using (var scope = app.Services.CreateScope())
 
     context.Database.EnsureCreated();
 
-    if(!context.Brands.Any())
+    if (!context.Brands.Any())
     {
         context.Brands.AddRange(
             new Brand { Name = "Asus" },
             new Brand { Name = "Corsair" },
             new Brand { Name = "MSI" }
         );
-        
+
         context.SaveChanges();
     }
 
-    if(!context.Products.Any())
+    if (!context.Products.Any())
     {
         context.Products.AddRange(
             new Product

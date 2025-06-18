@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GL_Casestudy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a2c504e031bd53419ddfbd1a4dfd4cafd5182a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GL_Casestudy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GL_Casestudy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

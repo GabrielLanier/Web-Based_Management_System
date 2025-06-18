@@ -20,6 +20,54 @@
     ]
   },
   {
+    "ContainingType": "GL_Casestudy.Controllers.CustomerController",
+    "Method": "Login",
+    "RelativePath": "api/Customer/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "helper",
+        "Type": "GL_Casestudy.Helpers.CustomerHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GL_Casestudy.Helpers.CustomerHelper",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GL_Casestudy.Controllers.CustomerController",
+    "Method": "Register",
+    "RelativePath": "api/Customer/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "helper",
+        "Type": "GL_Casestudy.Helpers.CustomerHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GL_Casestudy.Helpers.CustomerHelper",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "GL_Casestudy.Controllers.HomeController",
     "Method": "Index",
     "RelativePath": "api/Home",

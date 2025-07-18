@@ -2,6 +2,7 @@
 using GL_Casestudy.DAL.DAO;
 using GL_Casestudy.DAL.DomainClasses;
 using GL_Casestudy.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +15,7 @@ using System.Text;
 namespace GL_Casestudy.Controllers
 {
     [ApiController]
+    [Authorize]
     public class CustomerController : ControllerBase
     {
         readonly AppDbContext _ctx;
@@ -26,6 +28,7 @@ namespace GL_Casestudy.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("api/[controller]/Register")]
         [Produces("application/json")]
         public async Task<ActionResult<CustomerHelper>> Register(CustomerHelper helper)
@@ -58,6 +61,7 @@ namespace GL_Casestudy.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("api/[controller]/Login")]
         [Produces("application/json")]
         public async Task<ActionResult<CustomerHelper>> Login(CustomerHelper helper)

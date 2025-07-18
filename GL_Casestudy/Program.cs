@@ -23,7 +23,7 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyAllowSpecificOrigins,
-        policy => policy.WithOrigins("http://localhost:9000", "http://localhost:9001", "http://localhost:9002", "http://localhost:9003").AllowAnyMethod().AllowAnyHeader());
+        policy => policy.WithOrigins("http://localhost:9000", "http://localhost:9001", "http://localhost:9002", "http://localhost:9003", "http://localhost:9004", "http://localhost:9005", "http://localhost:9006").AllowAnyMethod().AllowAnyHeader());
 });
 
 // jwt addition

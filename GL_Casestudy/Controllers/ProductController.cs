@@ -1,6 +1,7 @@
 ﻿using GL_Casestudy.DAL;
 using GL_Casestudy.DAL.DAO;
 using GL_Casestudy.DAL.DomainClasses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace GL_Casestudy.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         readonly AppDbContext _ctx;
